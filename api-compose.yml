@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  api:
+    build:
+      context: .
+      dockerfile: "Dockerfile"
+    ports:
+      - "60106:8031"
+#    restart: always
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: "postgres"
+      POSTGRES_USER: "postgres_admin"
+      POSTGRES_PASSWORD: "postgres_33rfdf322"
+    ports:
+      - "60105:5432"
