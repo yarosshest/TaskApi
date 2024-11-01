@@ -7,7 +7,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from starlette import status
 
 from db.database import get_db_session
-from models.models import Token
+from models.models import Token, Message
 from security.security import authenticate_user, ACCESS_TOKEN_EXPIRE_MINUTES, create_access_token
 
 
@@ -17,7 +17,11 @@ router = APIRouter(
 
 )
 
-@router.post("/", response_model=Token)
+@router.post("/", response_model=Token,
+             responses={
+                 200: {"model": Message, "description": "Successful login"},
+                 401: {"model": Message, "description": "Incorrect username or password"}
+             },)
 async def login_for_access_token(
         form_data: Annotated[OAuth2PasswordRequestForm, Depends()],
         db_session: AsyncSession = Depends(get_db_session)
