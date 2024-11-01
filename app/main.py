@@ -1,4 +1,5 @@
 import asyncio
+import json
 
 import uvicorn as uvicorn
 from fastapi import FastAPI
@@ -11,6 +12,13 @@ from routers.task import router as task
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 api = FastAPI()
+
+@api.on_event("startup")
+def save_openapi_json():
+    openapi_data = api.openapi()
+    # Change "openapi.json" to desired filename
+    with open("openapi.json", "w") as file:
+        json.dump(openapi_data, file)
 
 api.include_router(token)
 api.include_router(auth)
