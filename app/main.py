@@ -2,6 +2,7 @@ import asyncio
 
 import uvicorn as uvicorn
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from db.database import init_db
 from fastapi.security import OAuth2PasswordBearer
 from routers.token import router as token
@@ -15,6 +16,14 @@ api.include_router(token)
 api.include_router(auth)
 api.include_router(task)
 
+api.add_middleware(
+    CORSMiddleware,  # type: ignore
+    allow_origins=["*"],  # You can specify the allowed origins here
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+    expose_headers=["access_token", "token_type"],
+)
 
 def app_main():
     asyncio.run(init_db())

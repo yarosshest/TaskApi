@@ -60,7 +60,7 @@ def create_access_token(data: dict, expires_delta: timedelta | None = None):
 async def get_current_user(token: Annotated[str, Depends(oauth2_scheme)],
                            db_session: Annotated[AsyncSession, Depends(get_db_session)]) -> User | None:
     if token is None:
-        return None
+        raise credentials_exception
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         username: str = payload.get("sub")
@@ -68,7 +68,7 @@ async def get_current_user(token: Annotated[str, Depends(oauth2_scheme)],
             raise credentials_exception
         token_data = TokenData(username=username)
     except JWTError:
-        return None
+        raise credentials_exception
     db = UserInterface(db_session)
     user = await db.get_by_username(username=token_data.username)
     if user is None:

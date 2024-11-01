@@ -1,7 +1,7 @@
 from typing import Optional
 
-from sqlalchemy import Integer, String
-from sqlalchemy.orm import DeclarativeBase, mapped_column, Mapped
+from sqlalchemy import Integer, String, Boolean, ForeignKey
+from sqlalchemy.orm import DeclarativeBase, mapped_column, Mapped, relationship
 
 
 class Base(DeclarativeBase):
@@ -20,3 +20,16 @@ class Task(Base):
     id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
     title: Mapped[str] = mapped_column(String, index=True)
     description: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    complete: Mapped[bool] = mapped_column(Boolean, default=False)
+
+    photos: Mapped["Photo"] = relationship("Photo", back_populates="task")
+
+class Photo(Base):
+    __tablename__ = 'photos'
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    filename: Mapped[str] = mapped_column(String, index=True)  # Название файла в MinIO
+    url: Mapped[str] = mapped_column(String)  # Ссылка на фото в MinIO
+    task_id: Mapped[Optional[int]] = mapped_column(Integer, ForeignKey("tasks.id"))  # Связь с таблицей заданий
+
+    task: Mapped[Task] = relationship("Task", back_populates="photos")

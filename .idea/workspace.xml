@@ -4,32 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c7cb3cc-ba7c-49af-8e19-8063c17f784e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/TaskApi.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/db/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/db/database.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/db/interfaces/DatabaseInterface.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/db/interfaces/UserInterface.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/db/interfaces/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/db/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routers/auth.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routers/task.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routers/token.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/security/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/security/security.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    <list default="true" id="6c7cb3cc-ba7c-49af-8e19-8063c17f784e" name="Changes" comment="init commit">
+      <change afterPath="$PROJECT_DIR$/app/db/interfaces/PhotoInterface.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/db/minioTool.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/task.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/security/security.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/security/security.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,9 +34,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2nsm4RAmdTdPIBtqZ7QCy60huyI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -59,6 +46,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Docker.api-compose.yml.api: Compose Deployment.executor": "Run",
+    "Docker.api-compose.yml.minio: Compose Deployment.executor": "Run",
     "Docker.api-compose.yml.postgres: Compose Deployment.executor": "Run",
     "Docker.api-compose.yml: Compose Deployment.executor": "Run",
     "Python.app.executor": "Run",
@@ -105,7 +93,9 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml" />
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
       <method v="2" />
     </configuration>
     <configuration name="api-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
@@ -133,6 +123,21 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="api-compose.yml.minio: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="minio" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="api-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration name="api-compose.yml.postgres: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
@@ -149,6 +154,7 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Docker.api-compose.yml.minio: Compose Deployment" />
       <item itemvalue="Docker.api-compose.yml: Compose Deployment" />
       <item itemvalue="Docker.api-compose.yml.api: Compose Deployment" />
       <item itemvalue="Docker.api-compose.yml.postgres: Compose Deployment" />
@@ -157,6 +163,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Docker.api-compose.yml.api: Compose Deployment" />
+        <item itemvalue="Docker.api-compose.yml.minio: Compose Deployment" />
         <item itemvalue="Docker.api-compose.yml: Compose Deployment" />
         <item itemvalue="Docker.api-compose.yml.postgres: Compose Deployment" />
         <item itemvalue="Python.main" />
@@ -179,6 +186,19 @@
       <option name="presentableId" value="Default" />
       <updated>1729769966238</updated>
     </task>
+    <task id="LOCAL-00001" summary="init commit">
+      <option name="closed" value="true" />
+      <created>1729910326334</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1729910326334</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="init commit" />
   </component>
 </project>

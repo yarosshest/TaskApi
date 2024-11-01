@@ -2,6 +2,9 @@ from typing import Optional
 
 from pydantic import BaseModel
 
+from db.models import Photo
+
+
 class Message(BaseModel):
     message: str
 
@@ -28,8 +31,17 @@ class TaskCreate(BaseModel):
 class TaskUpdate(BaseModel):
     title: Optional[str] = None
     description: Optional[str] = None
+    complete: bool
 
 class Task(BaseModel):
     id: int
     title: str
-    description: str | None = None
+    description: Optional[str] = None
+    complete: bool
+
+class PdPhoto(BaseModel):
+    id: int
+    url: str
+
+
+

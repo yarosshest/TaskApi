@@ -21,17 +21,21 @@ router = APIRouter(
 
 @router.post("/register",
              responses={
-                 200: {"model": Message, "description": "Successful register"},
-                 409: {"model": Message, "description": "Already exist"}}
+                 200: {"model": Message, "description": "Successful registration"},
+                 409: {"model": Message, "description": "User already exists"}
+             },
+             summary="Register a new user",
+             description="Creates a new user account with the provided username, password, and email."
              )
 async def register_post(login: Annotated[str, Form()],
                         password: Annotated[str, Form()],
+                        email: Annotated[str, Form()],
                         db_session: AsyncSession = Depends(get_db_session)
                         ):
     db = UserInterface(db_session)
     u = await db.get_by_username(login)
     if u is None:
-        user = User(username=login, hashed_password=get_password_hash(password))
+        user = User(username=login, hashed_password=get_password_hash(password), email=email)
         await db.add(user)
         return JSONResponse(status_code=200, content={"message": "Successful register"})
     else:
@@ -41,7 +45,10 @@ async def register_post(login: Annotated[str, Form()],
 @router.post("/login",
              responses={
                  200: {"model": Message, "description": "Successful login"},
-                 401: {"model": Message, "description": "Incorrect username or password"}}
+                 401: {"model": Message, "description": "Incorrect username or password"}
+             },
+             summary="User login",
+             description="Authenticates a user and returns an access token if successful."
              )
 async def login_post(
         login: Annotated[str, Form()],
