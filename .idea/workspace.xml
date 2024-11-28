@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c7cb3cc-ba7c-49af-8e19-8063c17f784e" name="Changes" comment="toked responses">
+    <list default="true" id="6c7cb3cc-ba7c-49af-8e19-8063c17f784e" name="Changes" comment="openapi_data dump">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/task.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,26 +35,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Docker.api-compose.yml.api: Compose Deployment.executor": "Run",
-    "Docker.api-compose.yml.minio: Compose Deployment.executor": "Run",
-    "Docker.api-compose.yml.postgres: Compose Deployment.executor": "Run",
-    "Docker.api-compose.yml: Compose Deployment.executor": "Run",
-    "Python.app.executor": "Run",
-    "Python.main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/yaros/PycharmProjects/TaskApi/app/db",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Docker.api-compose.yml.api: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.api-compose.yml.minio: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.api-compose.yml.postgres: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.api-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/yaros/PycharmProjects/TaskApi/app&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yaros\PycharmProjects\TaskApi\app" />
       <recent name="C:\Users\yaros\PycharmProjects\TaskApi\app\db" />
       <recent name="C:\Users\yaros\PycharmProjects\TaskApi" />
-      <recent name="C:\Users\yaros\PycharmProjects\TaskApi\app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\yaros\PycharmProjects\TaskApi\app" />
@@ -144,11 +146,11 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Docker.api-compose.yml.minio: Compose Deployment" />
+      <item itemvalue="Python.main" />
       <item itemvalue="Docker.api-compose.yml: Compose Deployment" />
       <item itemvalue="Docker.api-compose.yml.api: Compose Deployment" />
+      <item itemvalue="Docker.api-compose.yml.minio: Compose Deployment" />
       <item itemvalue="Docker.api-compose.yml.postgres: Compose Deployment" />
-      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
@@ -200,13 +202,22 @@
       <option name="project" value="LOCAL" />
       <updated>1730503991336</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="openapi_data dump">
+      <option name="closed" value="true" />
+      <created>1730505446717</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1730505446717</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init commit" />
     <MESSAGE value="photo updtade" />
     <MESSAGE value="toked responses" />
-    <option name="LAST_COMMIT_MESSAGE" value="toked responses" />
+    <MESSAGE value="openapi_data dump" />
+    <option name="LAST_COMMIT_MESSAGE" value="openapi_data dump" />
   </component>
 </project>

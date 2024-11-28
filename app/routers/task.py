@@ -21,7 +21,7 @@ router = APIRouter(
     prefix="/tasks",
     tags=["tasks"],
 )
-@router.post("/", response_model=pdTask,
+@router.post("/", response_model=Message,
              responses={401: {"model": Message, "description": "Could not validate credentials"},},
              summary="Create a new task",
              description="Create a new task by providing the task details. "
@@ -98,13 +98,13 @@ async def update_task(task_id: int,
     return updated_task
 
 
-@router.delete("/{task_id}", response_model=dict,
+@router.delete("/{task_id}", response_model=Message,
                summary="Delete a specific task",
                description="Deletes a task identified by its ID. "
                            "Returns a confirmation message upon successful deletion.",
                responses={
-                   200: {"description": "Task deleted successfully"},
-                   404: {"description": "Task not found"},
+                   200: {"model": Message, "description": "Task deleted successfully"},
+                   404: {"model": Message, "description": "Task not found"},
                    401: {"model": Message, "description": "Could not validate credentials"},
                }
 )
@@ -125,9 +125,9 @@ async def delete_task(task_id: int,
              description="Uploads a photo for a task identified by its ID. "
                          "Returns a confirmation message upon successful upload.",
              responses={
-                 200: {"description": "Photo uploaded successfully"},
-                 404: {"description": "Task not found"},
-                 422: {"description": "Invalid file format or upload issue"},
+                 200: {"model": Message, "description": "Photo uploaded successfully"},
+                 404: {"model": Message, "description": "Task not found"},
+                 422: {"model": Message, "description": "Invalid file format or upload issue"},
                  401: {"model": Message, "description": "Could not validate credentials"},
              }
 )
