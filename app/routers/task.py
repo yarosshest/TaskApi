@@ -21,7 +21,7 @@ router = APIRouter(
     prefix="/tasks",
     tags=["tasks"],
 )
-@router.post("/", response_model=Message,
+@router.post("/", response_model=pdTask,
              responses={401: {"model": Message, "description": "Could not validate credentials"},},
              summary="Create a new task",
              description="Create a new task by providing the task details. "

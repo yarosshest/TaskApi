@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c7cb3cc-ba7c-49af-8e19-8063c17f784e" name="Changes" comment="openapi_data dump">
+    <list default="true" id="6c7cb3cc-ba7c-49af-8e19-8063c17f784e" name="Changes" comment="commit fix email">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/app/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/task.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +217,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732794595940</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="commit fix email">
+      <option name="closed" value="true" />
+      <created>1734571458945</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1734571458945</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -239,6 +244,7 @@
     <MESSAGE value="photo updtade" />
     <MESSAGE value="toked responses" />
     <MESSAGE value="openapi_data dump" />
-    <option name="LAST_COMMIT_MESSAGE" value="openapi_data dump" />
+    <MESSAGE value="commit fix email" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit fix email" />
   </component>
 </project>
