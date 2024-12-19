@@ -14,7 +14,8 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 api = FastAPI()
 
 @api.on_event("startup")
-def save_openapi_json():
+async def save_openapi_json():
+    await init_db()
     openapi_data = api.openapi()
     # Change "openapi.json" to desired filename
     with open("openapi.json", "w") as file:

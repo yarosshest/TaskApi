@@ -29,13 +29,13 @@ router = APIRouter(
              )
 async def register_post(login: Annotated[str, Form()],
                         password: Annotated[str, Form()],
-                        email: Annotated[str, Form()],
+                        # email: Annotated[str, Form()],
                         db_session: AsyncSession = Depends(get_db_session)
                         ):
     db = UserInterface(db_session)
     u = await db.get_by_username(login)
     if u is None:
-        user = User(username=login, hashed_password=get_password_hash(password), email=email)
+        user = User(username=login, hashed_password=get_password_hash(password))
         await db.add(user)
         return JSONResponse(status_code=200, content={"message": "Successful register"})
     else:

@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6c7cb3cc-ba7c-49af-8e19-8063c17f784e" name="Changes" comment="openapi_data dump">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routers/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/task.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/app/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routers/auth.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,17 +148,17 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.main" />
       <item itemvalue="Docker.api-compose.yml: Compose Deployment" />
       <item itemvalue="Docker.api-compose.yml.api: Compose Deployment" />
       <item itemvalue="Docker.api-compose.yml.minio: Compose Deployment" />
       <item itemvalue="Docker.api-compose.yml.postgres: Compose Deployment" />
+      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Docker.api-compose.yml.api: Compose Deployment" />
-        <item itemvalue="Docker.api-compose.yml.minio: Compose Deployment" />
         <item itemvalue="Docker.api-compose.yml: Compose Deployment" />
+        <item itemvalue="Docker.api-compose.yml.minio: Compose Deployment" />
         <item itemvalue="Docker.api-compose.yml.postgres: Compose Deployment" />
         <item itemvalue="Python.main" />
       </list>
@@ -210,8 +212,27 @@
       <option name="project" value="LOCAL" />
       <updated>1730505446717</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="openapi_data dump">
+      <option name="closed" value="true" />
+      <created>1732794595940</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732794595940</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init commit" />
