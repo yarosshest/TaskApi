@@ -26,18 +26,23 @@ class LoginForm(BaseModel):
 class TaskCreate(BaseModel):
     title: str
     description: Optional[str] = None
+    status: str = "assigned"
 
 
 class TaskUpdate(BaseModel):
     title: Optional[str] = None
     description: Optional[str] = None
-    complete: bool
+    complete: Optional[bool] = None
+    status: Optional[str] = None
+
 
 class Task(BaseModel):
     id: int
     title: str
     description: Optional[str] = None
     complete: bool
+    status: str
+
 
 class PdPhoto(BaseModel):
     id: int

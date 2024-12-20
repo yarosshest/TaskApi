@@ -7,20 +7,20 @@ from typing import List, Annotated
 
 from starlette.responses import JSONResponse
 
-from db.interfaces.PhotoInterface import PhotoInterface
 from db.minioTool import minioApi
-from db.models import Task, User, Photo  # Обязательно укажите правильный путь к вашей модели Task
-from db.interfaces.DatabaseInterface import \
-    DatabaseInterface  # Убедитесь, что импортируете правильный интерфейс базы данных
-from db.database import get_db_session  # Импортируйте свою зависимость для получения сессии базы данных
-from models.models import TaskCreate, TaskUpdate, Task as pdTask, Message, PdPhoto
+from db.models import Task, User, Photo
+from db.database import get_db_session
+from db.interfaces.PhotoInterface import PhotoInterface
+from db.interfaces.DatabaseInterface import DatabaseInterface
+from models.models import Message, PdPhoto
+from models.models import TaskCreate, TaskUpdate, Task as pdTask
 from security.security import get_current_user
-
 
 router = APIRouter(
     prefix="/tasks",
     tags=["tasks"],
 )
+
 @router.post("/", response_model=pdTask,
              responses={401: {"model": Message, "description": "Could not validate credentials"},},
              summary="Create a new task",
